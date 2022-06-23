@@ -4,10 +4,7 @@
 package main
 
 import (
-	"errors"
 	"fmt"
-	"math/rand"
-	"time"
 )
 
 var globalVar string
@@ -31,86 +28,7 @@ func main() {
 	fmt.Printf("nbr: %v", nbr)
 }
 
-/*//////////////////////// FUNCTIONS ///////////////////////*/
-
-func myRandNumberFunc() {
-	rand.Seed(time.Now().UnixNano())
-	z := rand.Int()
-
-	fmt.Printf("\n\n°myRandNumberFunc\n\n")
-	fmt.Printf("My random number is: %v \n\n", z)
-	/* Ou on peut dirrectement appeler la rand.Int() */
-	/* fmt.Printf("My random number is: %v", rand.Int()) */
-
-	if z%2 == 0 { /* On verifie que z est paire ou impaire */
-		fmt.Printf("%v est paire \n\n", z)
-	} else {
-		fmt.Printf("%v est impaire\n\n", z)
-	}
-}
-
 /////////////////////////////////////////////////////////////
-
-func myAgeFunc(age int) {
-	fmt.Printf("\n\n°myAgeFunc\n\n")
-	if age > 18 {
-		fmt.Printf("Je suis majeur\n\n")
-	} else if age == 18 {
-		fmt.Printf("Je viens d'etre majeur\n\n")
-	} else {
-		fmt.Printf("Je sui mineur\n\n")
-	}
-
-	for i := 0; i < 3; i++ {
-		fmt.Printf("La valeur de i est: %v \n\n", i)
-	}
-}
-
-/////////////////////////////////////////////////////////////
-
-func myCaculFunc(A, B int) {
-	var C int
-	fmt.Printf("\n\n°myCalculFunc\n\n")
-	fmt.Printf("My first number is: %v, my second is %v, and my total is: %v \n\n", A, B, C)
-	/* ou Println pour afficher sans formatage  */
-	/* fmt.Println(x, y) */
-}
-
-/////////////////////////////////////////////////////////////
-
-func myArrayFunc() {
-	fmt.Printf("\n\n°myArrayFunc\n\n")
-	var list [3]int
-	list[0] = 10
-	list[1] = 20
-	list[2] = 30
-
-	fmt.Println(list)
-	fmt.Printf("\n\n")
-
-	list2 := [...]int{10, 20, 30, 40, 50, 60, 70, 80}
-
-	fmt.Println(list2)
-	fmt.Printf("\n\n")
-
-	for pos, value := range list2 {
-		fmt.Printf("Position %d est egale à %d \n\n", pos, value)
-	}
-}
-
-/////////////////////////////////////////////////////////////
-
-func sayByeFunc(name string) (string, error) {
-	if name == "" {
-		return "", errors.New("\n\n\bErreur, aucun nom spécifié ! ")
-	}
-
-	byeMsg := fmt.Sprintf("\n\n%v s'en va! Bonne soirée", name)
-	return byeMsg, nil
-}
-
-/////////////////////////////////////////////////////////////
-
 func mysuperMarketMapPriceFunc() {
 	superMarketPrice := map[string]int{
 		"item1": 1,
@@ -124,31 +42,6 @@ func mysuperMarketMapPriceFunc() {
 	for key, value := range superMarketPrice {
 		fmt.Printf("Item %v Price %v € \n\n", key, value)
 	}
-}
-
-/////////////////////////////////////////////////////////////
-
-func myCalendarFunc() {
-	myCalendar := map[string]int{
-		"JANVIER":   31,
-		"FEVRIER":   28,
-		"MARS":      31,
-		"AVRIL":     30,
-		"MAI":       31,
-		"JUIN":      30,
-		"JUILLET":   31,
-		"AOUT":      31,
-		"SEPTEMBRE": 30,
-		"OCTOBRE":   31,
-		"NOVEMBRE":  30,
-		"DECEMBRE":  31,
-	}
-	daysInAYear := 0
-	for key, value := range myCalendar {
-		fmt.Printf("Mois: %s => %d Jours \n", key, value)
-		daysInAYear = daysInAYear + value
-	}
-	fmt.Printf("\n\nNbr de jours dans l'année: %v jours \n\n", daysInAYear)
 }
 
 /////////////////////////////////////////////////////////////
