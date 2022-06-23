@@ -1,5 +1,3 @@
-# formation Golang
-
 # FORMATION GOLANG
 
 # DESCRIPTION
